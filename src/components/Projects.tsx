@@ -95,16 +95,14 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-15 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 + i * 0.2 }}
-              className={`group relative rounded-3xl overflow-hidden bg-card-bg border border-card-border gradient-border card-hover ${
-                i === 0 ? 'lg:col-span-2' : ''
-              }`}
+              className="group relative rounded-2xl sm:rounded-3xl overflow-hidden bg-card-bg border border-card-border gradient-border card-hover"
             >
               {/* Video Thumbnail */}
               <div className="relative aspect-video overflow-hidden">
@@ -124,30 +122,30 @@ export default function Projects() {
                   className="absolute inset-0 flex items-center justify-center bg-foreground/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center shadow-2xl">
-                    <Play className="text-white ml-1" size={32} fill="white" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-accent flex items-center justify-center shadow-2xl">
+                    <Play className="text-white ml-0.5 sm:ml-1" size={24} fill="white" />
                   </div>
                 </motion.button>
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-foreground/80 backdrop-blur-sm text-xs font-medium">
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-foreground/80 backdrop-blur-sm text-[10px] sm:text-xs font-medium">
                   {project.category}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-display font-bold mb-3 group-hover:text-accent transition-colors">
+              <div className="p-4 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-display font-bold mb-2 sm:mb-3 group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-foreground/60 mb-6">{project.description}</p>
+                <p className="text-foreground/60 text-sm sm:text-base mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-none">{project.description}</p>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium"
+                      className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-accent/10 text-accent text-[10px] sm:text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -155,32 +153,32 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4">
+                <div className="flex gap-2 sm:gap-4">
                   <motion.a
                     href={project.liveUrl}
-                    className="btn-primary inline-flex items-center gap-2 text-sm py-3"
+                    className="btn-primary inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm py-2 sm:py-3 px-3 sm:px-4"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <ExternalLink size={16} />
-                    Live Demo
+                    <ExternalLink size={14} />
+                    <span className="hidden xs:inline">Live Demo</span>
                   </motion.a>
                   <motion.a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-3 rounded-full border border-card-border hover:border-accent transition-colors inline-flex items-center gap-2"
+                    className="px-2.5 sm:px-4 py-2 sm:py-3 rounded-full border border-card-border hover:border-accent transition-colors inline-flex items-center gap-1.5 sm:gap-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <GithubIcon size={16} />
+                    <GithubIcon size={14} />
                   </motion.a>
                 </div>
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-accent-secondary/5 rounded-3xl" />
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-accent-secondary/5 rounded-2xl sm:rounded-3xl" />
               </div>
             </motion.div>
           ))}
@@ -193,14 +191,14 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 backdrop-blur-xl p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 backdrop-blur-xl p-3 sm:p-4 md:p-6"
           onClick={() => setActiveVideo(null)}
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden"
+            className="relative w-full max-w-5xl aspect-video rounded-xl sm:rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <iframe
@@ -214,11 +212,11 @@ export default function Projects() {
           
           <motion.button
             onClick={() => setActiveVideo(null)}
-            className="absolute top-6 right-6 p-3 rounded-full bg-foreground/10 hover:bg-foreground/20 transition-colors"
+            className="absolute top-3 right-3 sm:top-6 sm:right-6 p-2 sm:p-3 rounded-full bg-foreground/10 hover:bg-foreground/20 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <X size={24} />
+            <X size={20} className="sm:size-6" />
           </motion.button>
         </motion.div>
       )}
