@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowDown, Sparkles, Zap, Code2 } from 'lucide-react';
 
@@ -194,14 +195,14 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Placeholder Avatar */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-secondary/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center">
-                    <span className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white">PI</span>
-                  </div>
-                </div>
-              </div>
+              {/* Profile Photo */}
+              <Image
+                src="/profile.jpg"
+                alt="Pelumi Idowu - Frontend Developer"
+                fill
+                className="object-cover"
+                priority
+              />
 
               {/* Shimmer Effect */}
               <motion.div
