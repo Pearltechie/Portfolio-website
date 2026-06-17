@@ -15,8 +15,8 @@ const projects = [
       'A comprehensive healthcare records platform focused on secure digital health experiences. Features reusable UI components, responsive workflows, and accessibility-first design.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     videoId: 'IyFLHyOq9iE',
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://mediledger-nexus.onrender.com/',
+    githubUrl: 'https://github.com/Pearltechie',
     featured: true,
   },
   {
@@ -27,8 +27,8 @@ const projects = [
       'Real-time analytics dashboard integrating external market data APIs. Dynamic interfaces with responsive layouts optimized for performance across all devices.',
     tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     videoId: 'xBs6V5ZNmmw',
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://crypto-sense.vercel.app/',
+    githubUrl: 'https://github.com/Pearltechie',
     featured: true,
   },
   {
@@ -39,8 +39,8 @@ const projects = [
       'Decentralized organization platform with responsive layouts focused on performance and accessibility. Production deployment using modern frontend workflows.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     videoId: 'SYHGB3gz9dA',
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://harambee-dao-site.vercel.app/',
+    githubUrl: 'https://github.com/Pearltechie',
     featured: true,
   },
 ];
